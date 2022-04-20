@@ -77,3 +77,13 @@ body {
         filter: blur(4px);
     }
 }
+
+
+//로딩 라이트 버전
+#loading.light {
+    color: var(--black);
+    background:var(--light_bg);
+    .loading__text span {
+        color: var(--black);
+    }
+}

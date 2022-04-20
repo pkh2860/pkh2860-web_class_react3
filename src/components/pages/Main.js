@@ -70,6 +70,7 @@ class Main extends React.Component {
 
     componentDidMount(){    //3초뒤에 로딩이 끝난 후 메인 화면이 나옴
         setTimeout(() => {
+            document.getElementById("loading").classList.remove("loading__active")
             this.setState({isLoading:false})    //true 실행 3초 후 false로 변경
             this.getSite()
         }, 3000)

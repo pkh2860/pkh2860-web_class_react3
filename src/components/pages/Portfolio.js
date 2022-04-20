@@ -83,6 +83,7 @@ class Portfolio extends React.Component {
     componentDidMount(){
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active")
+            document.querySelector("body").style.background = "#000";
             this.getPorts();
         },2000)
     }
@@ -92,7 +93,7 @@ class Portfolio extends React.Component {
         // console.log(ports)
         return (
             <>          
-                {isLoading ? ( //true = Loading 실행 false = header~ 실행
+                {isLoading ? (
                     <Loading />
                 ) : (
                     <>
