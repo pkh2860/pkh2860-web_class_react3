@@ -1,26 +1,3 @@
-// import React from "react";
-// import Header from "../layout/Header";
-// import Contents from "../layout/Contents";
-// import Title from "../layout/Title";
-// import ReferCont from "../includes/ReferCont";
-// import Footer from "../layout/Footer";
-
-// function Reference(){
-//     return (
-//         <>
-//             <Header />
-//             <Contents>
-//                 <Title title={["HTML", "REFERENCE"]} />
-//                 <ReferCont />
-//                 <ContContact />
-//             </Contents>
-//             <Footer />
-//         </>
-//     )
-// }
-
-// export default Reference;
-
 import React from "react";
 import Header from "../layout/Header";
 import Contents from "../layout/Contents";
@@ -30,94 +7,94 @@ import Footer from "../layout/Footer";
 import ContContact from '../layout/Contact';
 import Loading from "../basics/Loading"
 import { gsap } from "gsap";
+import axios from "axios";
+
 // function Reference(){
 //     return (
 //         <>
-//             <Header color="light"/>
+//             <Header color="light" />
 //             <Contents>
-//                 <Title title={[ "REFERENCE", "book"]} color="light" />
+//                 <Title title={["reference","book"]} color="light" />
 //                 <ReferCont color="light" />
-//                 <ContContact />
+//                 <Contact />
 //             </Contents>
-
-//             <Footer  color="light"/>
+//             <Footer color="light" />
 //         </>
 //     )
 // }
-
 class Reference extends React.Component {
     state = {
         isLoading: true,
+        refers: [],
     }
-
-    ReferAnimation = () => {
-        setTimeout(()=>{
+    mainAnimation = () => {
+        setTimeout(() => {
             gsap.to("#header", {
-                duration:1.0,
+                duration: 0.8,
                 top: 0,
             });
             gsap.to("#footer", {
-                duration:0.8,
+                duration: 0.8,
                 bottom: 0,
-                // delay: 0.2,
+                delay: 0.2,
             });
             gsap.to(".cont__title strong", {
-                duration: 0.5,
-                x:0,
-                y:0,
-                opacity:1,
+                duration: 0.7,
+                y: 0,
+                opacity: 1,
                 delay: 1.0,
-                ease: "circ.out"
-            })
+                ease: "power4.out"
+            });
             gsap.to(".cont__title em", {
-                duration: 0.5,
-                x:0,
-                y:0,
-                opacity:1,
+                duration: 0.7,
+                y: 0,
+                opacity: 1,
                 delay: 1.3,
-                ease: "circ.out"
-            })
+                ease: "power4.out"
+            });
             gsap.to(".refer__inner", {
-                duration: 1.0,
-                // x:0,
-                y:0,
-                opacity:1,
+                duration: 0.7,
+                y: 0,
+                opacity: 1,
                 delay: 1.5,
-                ease: "circ.out"
-            })
-        }, 1000)
+                ease: "power4.out"
+            });
+        }, 10)
     }
-
-
-    componentDidMount(){    //3초뒤에 로딩이 끝난 후 메인 화면이 나옴
+    getSite = async () => {
+        const refer = await axios.get("https://pkh2860.github.io/pkh2860-web_class_react3/src/assets/json/reference.json")
         setTimeout(() => {
-            document.getElementById("loading").classList.remove("loading__active")
-            this.setState({isLoading:false})    //true 실행 3초 후 false로 변경
-            this.ReferAnimation()
-        }, 3000)
+            console.log("두번째 시작")
+            this.setState({isLoading: false});
+            this.mainAnimation();
+        }, 1600)
     }
-
+    componentDidMount(){
+        setTimeout(() => {
+            document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").style.background = "#F0EEEB";
+            this.getSite();
+        }, 2000);
+    }
     render(){
-        const {isLoading} = this.state  //this.state = true
-
-    return (
-        <>          
-             {isLoading ? ( //true = Loading 실행 false = header~ 실행
-            <Loading color="light" />
-            ) : (
-                <>
-                    <Header color="light"/>
-                    <Contents>
-                        <Title title={[ "REFERENCE", "book"]} color="light" />
-                        <ReferCont color="light" />
-                        <ContContact />
-                    </Contents>
-                    <Footer  color="light"/>
-                </>
-            )}
-        </>  
-    )
+        const {isLoading} = this.state;
+        return (
+            <>
+                {isLoading ? (
+                    <Loading color="light" />
+                ) : (
+                    <>
+                        <Header color="light"/>
+                        <Contents>
+                            <Title title={[ "REFERENCE", "book"]} color="light" />
+                            <ReferCont color="light" />
+                            <ContContact />
+                        </Contents>
+                        <Footer  color="light"/>
+                    </>
+                )}
+            </>
+        )
+    }
 }
-}
-
 export default Reference;
