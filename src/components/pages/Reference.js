@@ -1,14 +1,13 @@
 import React from "react";
 import Header from "../layout/Header";
 import Contents from "../layout/Contents";
-import Title from "../layout/Title";
-import ReferCont from "../includes/ReferCont";
 import Footer from "../layout/Footer";
-import ContContact from '../layout/Contact';
-import Loading from "../basics/Loading"
+import Title from "../layout/Title";
+import ContContact  from "../layout/Contact";
+import ReferCont from "../includes/ReferCont";
+import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 import axios from "axios";
-
 // function Reference(){
 //     return (
 //         <>
@@ -62,13 +61,15 @@ class Reference extends React.Component {
         }, 10)
     }
     getSite = async () => {
-        const refer = await axios.get("https://pkh2860.github.io/pkh2860-web_class_react3/src/assets/json/reference.json")
-        setTimeout(() => {
-            console.log("두번째 시작")
-            this.setState({isLoading: false});
-            this.mainAnimation();
-        }, 1600)
+        const {
+                data: {
+                    data : {htmlRefer},
+            },
+        } = await axios.get("https://webstoryboy.github.io/react2022/src/assets/json/refer.json");
+        this.setState({refers: htmlRefer, isLoading: false})
+        this.mainAnimation();
     }
+
     componentDidMount(){
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
@@ -77,20 +78,22 @@ class Reference extends React.Component {
         }, 2000);
     }
     render(){
-        const {isLoading} = this.state;
+        const {isLoading, refers} = this.state;
+
+
         return (
             <>
                 {isLoading ? (
                     <Loading color="light" />
-                ) : (
+                    ):(
                     <>
-                        <Header color="light"/>
+                        <Header color="light" />
                         <Contents>
-                            <Title title={[ "REFERENCE", "book"]} color="light" />
-                            <ReferCont color="light" />
+                            <Title title={["Reference","book"]} color="light" />
+                            <ReferCont refer={refers} color="light" />
                             <ContContact />
                         </Contents>
-                        <Footer  color="light"/>
+                        <Footer color="light" />
                     </>
                 )}
             </>

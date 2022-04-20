@@ -21,8 +21,6 @@ const PortText = [
     }
 ]
 
-
-
 function PortCont(props){
     return (
             <section className='port__cont'>
