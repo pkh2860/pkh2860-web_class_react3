@@ -126,7 +126,7 @@
                     "<object> 태그를 사용합니다."
                 ],
                 "Accessibility" : [
-                    "HTML5에서 지원하지 않습니다. 대신 <embed> 태그와 <object> 태그를 이용합니다.",
+                    "HTML5에서 지원하지 않습니다. 대신 <embed> 태그와 <object> 태그를 이용합니다."
                 ],
                 "mdn" : "https://developer.mozilla.org/ko/docs/Web/HTML/Element/applet",
                 "w3c" : ""
