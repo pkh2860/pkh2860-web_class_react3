@@ -14,7 +14,6 @@ function AboutInfo({title, desc, image}){
     )
 }
 
-
 const aboutText = [
     {
         title : "꿈을 설계하고 디자인 하다",
@@ -32,7 +31,6 @@ const aboutText = [
         image: "img/aboutImg03@3x.jpg"
     }
 ]
-
 
 export const AboutCont = (props) => {
   return (
