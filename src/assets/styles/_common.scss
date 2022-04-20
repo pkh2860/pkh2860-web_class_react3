@@ -30,10 +30,35 @@
         padding-bottom: 10vw;
     }
 }
+.light.cont__title {
+    background-color: var(--light_bg);
+    border-color: var(--light_border);
 
+    strong {
+        color: var(--black);
+    }
+    em {
+        color: var(--black);
+    }
+}
+
+//타이틀 애니메이션
+.cont__title {
+
+    strong {
+        display: block;
+        opacity: 0 ;
+        transform: translateX(100px) translateY(100px)
+    }
+    em {
+        display: block;
+        opacity: 0 ;
+        transform: translateX(100px) translateY(100px)
+    }
+   
+}
 
 // cont__Contact
-
 .cont__Contact {
     height: 100vh;
     display: flex;

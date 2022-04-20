@@ -13,7 +13,7 @@ function Header(props){
             <div className="header__menu">
                 <ul>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="/refer">Refer</Link></li>
+                    <li><Link to="/reference">Refer</Link></li>
                     <li><Link to="/youtube">Youtube</Link></li>
                     <li><Link to="/script">Script</Link></li>
                     <li><Link to="/contact">Contact</Link></li>

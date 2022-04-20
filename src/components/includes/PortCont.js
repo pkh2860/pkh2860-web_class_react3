@@ -1,64 +1,43 @@
 import React from "react";
 
-function PortCont(){
+function PortInfo({category,id,image,link,title}){
+    return (
+        <article className='port__item'>
+            <figure className='img'>
+                <a href={link}><img src={image} alt={`port0${id}`} /></a>
+            </figure>
+
+            <div className='text'>
+                <h3>{category}</h3>
+                <p>{title}</p>
+            </div>
+        </article>
+    )
+}
+
+const PortText = [
+    {
+
+    }
+]
+
+
+
+function PortCont(props){
     return (
             <section className='port__cont'>
                 <div className='container'>
                     <div className='port__inner'>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port01@3x.jpg" alt="port1" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port02@2x.jpg" alt="port2" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port03@3x.jpg" alt="port3" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port01@3x.jpg" alt="port3" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port02@3x.jpg" alt="port3" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
-                        <article className='port__item'>
-                            <figure className='img'>
-                                <a href="/"><img src="img/port03@3x.jpg" alt="port3" /></a>
-                            </figure>
-                            <div className='text'>
-                                <h3>Portfolio Title</h3>
-                                <p>PORTFOLIO</p>
-                            </div>
-                        </article>
+                        {props.port.map((port) => (
+                            <PortInfo
+                                key={port.id}
+                                id={port.id}
+                                category={port.category}
+                                image={port.image}
+                                link={port.link}
+                                title={port.title}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

@@ -1,21 +1,21 @@
 import React from 'react';
-import Header from '../includes/Header';
-import Footer from '../includes/Footer';
-import Contents from '../includes/Contents';
-import ContTitle from '../includes/ContTitle';
-import ContContact from '../includes/ContContact';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import Contents from '../layout/Contents';
+import Title from '../layout/Title';
+import ContContact from '../layout/Contact';
 import AboutCont from '../includes/AboutCont';
-function Portfolio(){
+function About(){
     return (
         <>
-            <Header />
+            <Header color="light" />
             <Contents>     
-                <ContTitle />
-                <AboutCont />
+                <Title title={["About", "me"]} color="light" />
+                <AboutCont color="light" />
                 <ContContact />
             </Contents>
-            <Footer />
+            <Footer color="light" />
         </>
     )
 }
-export default Portfolio;
+export default About;
