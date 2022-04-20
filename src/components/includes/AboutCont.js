@@ -13,7 +13,6 @@ function AboutInfo({title, desc, image}){
         </div>
     )
 }
-
 const aboutText = [
     {
         title : "꿈을 설계하고 디자인 하다",
