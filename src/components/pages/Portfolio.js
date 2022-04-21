@@ -3,7 +3,7 @@ import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import Contents from '../layout/Contents';
 import Title from '../layout/Title';
-import ContContact from '../layout/Contact';
+import Contact from '../layout/Contact';
 import PortCont from '../includes/PortCont';
 import Loading from "../basics/Loading"
 import { gsap } from "gsap";
@@ -101,7 +101,7 @@ class Portfolio extends React.Component {
                         <Contents>
                             <Title title={["portfolio", "Site"]} />
                             <PortCont port={ports}/>
-                            <ContContact />
+                            <Contact />
                         </Contents>
                         <Footer />
                     </>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ContContact() {
+function Contact() {
   return (
     <section className='cont__Contact'>
         <p>Let`s create something new</p>
@@ -10,4 +10,4 @@ function ContContact() {
   )
 }
 
-export default ContContact
+export default Contact

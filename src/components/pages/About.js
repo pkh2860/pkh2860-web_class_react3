@@ -3,7 +3,7 @@ import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import Contents from '../layout/Contents';
 import Title from '../layout/Title';
-import ContContact from '../layout/Contact';
+import Contact from '../layout/Contact';
 import AboutCont from '../includes/AboutCont';
 import Loading from "../basics/Loading"
 import { gsap } from "gsap";
@@ -91,7 +91,7 @@ class About extends React.Component {
                     <Contents>     
                         <Title title={["About", "me"]} color="light" />
                         <AboutCont color="light" />
-                        <ContContact />
+                        <Contact />
                     </Contents>
                     <Footer color="light" />
                     </>
