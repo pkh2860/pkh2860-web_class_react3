@@ -44,7 +44,7 @@ class ReferDetail extends React.Component {
     } else {
       return (
         <>
-          <Header color="light" />
+          <Header />
           <Contents>
             <section className="refer__cont">
               <div className="container">
@@ -87,7 +87,7 @@ class ReferDetail extends React.Component {
               </div>
             </section>
           </Contents>
-          <Footer color="light"  />
+          <Footer />
         </>
       )
     }
