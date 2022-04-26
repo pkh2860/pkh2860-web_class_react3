@@ -3,17 +3,15 @@ import Header from "../layout/Header"
 import Contents from "../layout/Contents"
 import Footer from "../layout/Footer"
 import Title from "../layout/Title"
-import Contact from "../layout/Contact";
-import YoutubeList from '../includes/YoutubeList'
-import YoutubeSearch from '../includes/YoutubeSearch'
+import Contact from "../layout/Contact"
 import Loading from "../basics/Loading";
+import MovieList from '../includes/MovieList'
+import MovieSearch from '../includes/MovieSearch'
 import { gsap } from "gsap";
 
 
-// require('dotenv').config() npm i dotenv
-
-function Youtube() {    //videos=변수  가 바뀌면 setvideos에 저장
-    const [videos, setVideos] = useState([])
+function Movie() {
+    const [lists, setVideos] = useState([])
 
     const mainAnimation = () => {
         setTimeout(()=>{
@@ -44,7 +42,7 @@ function Youtube() {    //videos=변수  가 바뀌면 setvideos에 저장
                 delay: 1.3,
                 ease: "circ.out"
             });
-            gsap.to(".youtube__search", {
+            gsap.to(".movie__search", {
                 duration: 0.5,
                 x:0,
                 y:0,
@@ -52,12 +50,12 @@ function Youtube() {    //videos=변수  가 바뀌면 setvideos에 저장
                 delay: 1.5,
                 ease: "circ.out"
             });
-            gsap.to(".youtube__list", {
+            gsap.to(".movie__list", {
                 duration: 0.5,
                 x:0,
                 y:0,
                 opacity:1,
-                delay: 1.5,
+                delay: 1.7,
                 ease: "circ.out"
             });
         }, 10)
@@ -69,9 +67,9 @@ function Youtube() {    //videos=변수  가 바뀌면 setvideos에 저장
             redirect: 'follow'
           };
           
-          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${query}&key=${process.env.REACT_APP_API}&type=video`, requestOptions)
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=${query}&type=video`, requestOptions)
             .then(response => response.json())
-            .then(result => setVideos(result.items))
+            .then(result => setVideos(result.results))
             .catch(error => console.log('error', error));
     }
 
@@ -81,35 +79,33 @@ function Youtube() {    //videos=변수  가 바뀌면 setvideos에 저장
             redirect: 'follow'
           };
           
-            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=webstoryboy&key=${process.env.REACT_APP_API}&type=video`, requestOptions)
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API}&query=MARVEL&type=video`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                setVideos(result.items)
+                setVideos(result.results)
                 mainAnimation()
             })
             .catch(error => console.log('error', error));
 },[]);
-                
 
-    return ( 
-        <>
-            <Loading />
-            <Header />
-            <Contents>
-                <Title title={["Youtube", "reference"]}  />
-                <section id='youtube__cont'>
-                    <div className='container'>
-                        <div className='youtube__inner'>
-                        <YoutubeSearch onSearch={search} />
-                        <YoutubeList videos={videos} />
-                        </div>
+return ( 
+    <>
+        <Loading />
+        <Header />
+        <Contents>
+            <Title title={["Movie", "reference"]} />
+            <section id='movie__cont'>
+                <div className='container'>
+                    <div className='movie__inner'>
+                    <MovieSearch onSearch={search} />
+                    <MovieList  videos={lists} />
                     </div>
-                </section>
-                <Contact />
-            </Contents>
-            <Footer />
-        </>
-    )
+                </div>
+            </section>
+            <Contact />
+        </Contents>
+        <Footer />
+    </>
+)
 }
-
-export default Youtube
+export default Movie;

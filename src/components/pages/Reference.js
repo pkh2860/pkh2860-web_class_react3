@@ -81,7 +81,7 @@ class Reference extends React.Component {   //1
                     <Loading color="black" />
                 ) : (
                     <>
-                        <Header color="light" />
+                        <Header />
                         <Contents>
                             <Title title={["Reference", "Book"]} />
                             <section className="refer__cont">
@@ -115,7 +115,7 @@ class Reference extends React.Component {   //1
                             </section>
                             <Contact />
                         </Contents>
-                        <Footer color="light" />
+                        <Footer />
                     </>
                 )}
             </>
