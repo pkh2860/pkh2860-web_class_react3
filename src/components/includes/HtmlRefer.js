@@ -13,7 +13,7 @@ class HtmlRefer extends React.Component {
         data: { htmlRefer },
       },
     } = await axios.get(
-      "https://pkh2860.github.io/react2022/src/assets/json/reference.json"
+      "https://pkh2860.github.io/pkh2860-web_class_react3/src/assets/json/reference.json"
     );
 
     this.setState({ htmlRefer });
