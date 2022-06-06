@@ -1,6 +1,6 @@
 {
     "data": {
-        "type": "html",
+        "type": "CSS",
         "ver": "20220420_1",
         "author" : "pgh",
         "refer" : [
@@ -86,58 +86,7 @@
                 "Related": [],
                 "mdn": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/acronym",
                 "w3c": ""
-            },
-            {
-                "id": 4,
-                "title": "<address>",
-                "desc": "<address> 태그는 웹 페이지의 연락처 정보를 설정합니다.",
-                "desc2": "<address> 태그는 웹 페이지의 연락처 정보를 설정합니다. 사이트 주소, 전화번호, 이메일, 소설미디어, 위치 등의 정보와, 회사 정보, 회사 이름, 회사 주소 등과 관련된 정보를 표시합니다.",
-                "element": "블록 요소(Block Element)",
-                "tag": "적용(<address> ~ </address>)",
-                "version": "HTML4",
-                "view": "기울임꼴",
-                "use": "★★★★☆",
-                "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://blog.kakaocdn.net/dn/cq7eZP/btq4MibIZG3/V1x2TmPMYTsryCUr0wGZs0/img.png",
-                "link": "https://webzz.tistory.com/232",
-                "Definition": [
-                  "<address> 태그는 사이트 주소, 전화번호, 이메일, 소설미디어, 위치 등을 표시합니다.",
-                  "<address> 태그는 회사 정보, 회사 이름, 회사 주소 등과 관련된 정보를 표시합니다.",
-                  "<address> 태그는 <header>, <article>, <footer>, <aside>등 연락처 정보가 필요한 곳에 사용할 수 있습니다.",
-                  "<address> 태그는 연락처와 관련 없는 내용이라면 <p> 태그를 사용합니다.",
-                  "<address> 태그는 연락처 정보 보다 더 광범위한 정보를 포함 할 수 없습니다.(시간을 나타내는 time 태그등)",
-                  "<address> 태그는 일반적으로 <footer> 영역에서 많이 사용합니다."
-                ],
-                "Accessibility": [],
-                "CrossBroswing": [],
-                "Related": [],
-                "mdn": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address",
-                "w3c": "https://html.spec.whatwg.org/multipage/sections.html#the-address-element"
-            },
-            {
-                "id": 5,
-                "title": "<applet>",
-                "desc": "<applet> 태그는 애플랫 요소를 설정합니다.",
-                "desc2": "<applet> 태그는 애플랫 요소를 설정합니다. 현재는 사용하지 않습니다.",
-                "element": "-",
-                "tag": "적용(<applet> ~ </applet>)",
-                "version": "HTML4(HTML5에서 지원하지 않습니다.)",
-                "view": "-",
-                "use": "-",
-                "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://blog.kakaocdn.net/dn/bvTCwU/btq4MApDzxq/bqrUNsxkKjpXKcYYe8ZczK/img.png",
-                "link": "https://webzz.tistory.com/233",
-                "Definition": [
-                  "<applet> 태그는 자바 애플랫 요소를 설정합니다.",
-                  "<applet> 태그는 자바 애플랫 요소를 사용하기 위한 개발자 소스였으나, 현재는 사용하지 않으며, <object> 태그를 사용합니다."
-                ],
-                "Accessibility": [],
-                "CrossBroswing": [
-                  "HTML5에서 지원하지 않습니다. 대신 <embed> 태그와 <object> 태그를 이용합니다."
-                ],
-                "Related": [],
-                "mdn": "https://developer.mozilla.org/ko/docs/Web/HTML/Element/applet",
-                "w3c": ""
             }
-          
         ]
     }
 }
