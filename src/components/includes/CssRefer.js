@@ -13,7 +13,7 @@ class CssRefer extends React.Component {
         data: { cssRefer },
       },
     } = await axios.get(
-      "https://pkh2860.github.io/pkh2860-web_class_react3/src/assets/json/referenceCss.json"
+      "https://webstoryboy.github.io/react2022/src/assets/json/refer.json"
     );
 
     this.setState({ cssRefer });
