@@ -1,6 +1,8 @@
 {
   "data": {
     "type": "css",
+    "ver": "20220420_1",
+    "author": "pgh",
     "cssRefer": [
       {
         "id": 1,
