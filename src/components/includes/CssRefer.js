@@ -4,7 +4,7 @@ import axios from "axios";
 
 class CssRefer extends React.Component {
   state = {
-    CssRefer: [],
+    cssRefer: [],
   };
     constructor(props) {
       super();
@@ -17,14 +17,14 @@ class CssRefer extends React.Component {
   getRefer = async () => {
     const {
       data: {
-        data: { CssRefer },
+        data: { cssRefer },
       },
     } = await axios.get(
-      "https://webstoryboy.github.io/react2022/src/assets/json/refer.json"
+      "https://pkh2860.github.io/pkh2860-web_class_react3/src/assets/json/referenceCss.json"
 
     );
 
-    this.setState({ CssRefer });
+    this.setState({ cssRefer });
   };
 
   componentDidMount() {
