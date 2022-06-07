@@ -10,7 +10,7 @@ import CssRefer from "../includes/CssRefer";
 import { gsap } from "gsap";
 // import { element } from "prop-types";
 
-const referjson = {
+const menuList = {
   0: <HtmlRefer />,
   1: <CssRefer />,
 };
@@ -18,14 +18,11 @@ const referjson = {
 class Reference extends React.Component {
   state = {
     isLoading: true,
-    isActive: false,
-    activeId: 0,
+    menu: 0,
   };
-
-  clickHandler = (id) => {
-    const { isActive } = this.state;
-    this.setState({ isActive: !isActive, activeId: id });
-  };
+  changeMenu = (menuIndex) =>{
+    this.setState({menu : menuIndex});
+  }
 
   mainAnimation = () => {
     setTimeout(() => {
@@ -92,21 +89,11 @@ class Reference extends React.Component {
                 <div className="container">
                   <div className="refer__inner">
                     <ul className="tabs">
-                      <li
-                        className={this.state.isActive ? "" : "active"}
-                        onClick={() => this.clickHandler(0)}
-                      >
-                        HTML
-                      </li>
-                      <li
-                        className={this.state.isActive ? "active" : ""}
-                        onClick={() => this.clickHandler(1)}
-                      >
-                        CSS
-                      </li>
+                    <li className={`${this.state.menu === 0? 'active': ''}`} onClick={() => this.changeMenu(0)}>HTML</li>
+                    <li className={`${this.state.menu === 1? 'active': ''}`} onClick={() => this.changeMenu(1)}>CSS</li>
                     </ul>
                     <ul className="refer__list">
-                      {referjson[this.state.activeId]}
+                      {menuList[this.state.menu]}
                     </ul>
                   </div>
                 </div>
