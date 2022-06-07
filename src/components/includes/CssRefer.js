@@ -10,7 +10,7 @@ class CssRefer extends React.Component {
       super();
   
       this.state = {
-        menu: 0,
+        menu: 1,
       };
     }
     
